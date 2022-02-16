@@ -1,0 +1,13 @@
+<ul>
+
+    <% @restaurants.each do |restaurant| %>
+      <li>
+        <%= restaurant.name %>
+        <%= restaurant.phone_number %>
+        <%= restaurant.category %>
+        <%= link_to "See details", restaurant_path(restaurant), class: "btn btn-primary mt-3"%>
+        <%# <%= restaurant.review %>
+      </li>
+    <% end %>
+    <%= link_to "Add a new restaurant", new_restaurant_path, class: "btn btn-primary mt-3 " %>
+</ul>

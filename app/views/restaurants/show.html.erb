@@ -1,0 +1,20 @@
+<div class="container mt-5">
+  <p><%= link_to '< Back', restaurants_path, class: 'btn-light' %></p>
+  <div class="card-product">
+    <%= image_tag "https://loremflickr.com/320/240/#{@restaurant.category}" %>
+    <div class="card-product-infos">
+      <h2><%= @restaurant.name %></h2>
+      <p><%= @restaurant.address %></p>
+      <p><%= @restaurant.phone_number %></p>
+      <p><%= @restaurant.category %></p>
+      <ul>
+        <% @restaurant.reviews.each do |review| %>
+          <li><%= review.content %></li>
+          <li><%= review.rating %></li>
+        <% end %>
+      </ul>
+      <%# <p><%= @restaurant.review %></p> %>
+    </div>
+  </div>
+  <%= link_to 'Leave a review', new_restaurant_review_path(@restaurant) %>
+</div>
